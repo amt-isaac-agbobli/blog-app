@@ -1,8 +1,6 @@
 package com.example.blogapp.models;
 
-import com.example.blogapp.utils.Category;
-
-import java.util.UUID;
+import com.example.blogapp.enums.Category;
 
 public class Post {
     private Long id;

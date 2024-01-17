@@ -1,4 +1,4 @@
-package com.example.blogapp.utils;
+package com.example.blogapp.enums;
 
 public enum RoleType {
     ADMIN,

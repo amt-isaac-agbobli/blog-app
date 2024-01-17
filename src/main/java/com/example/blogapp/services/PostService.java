@@ -1,13 +1,14 @@
 package com.example.blogapp.services;
 
+import com.example.blogapp.interfaces.PostInterface;
 import com.example.blogapp.models.Post;
-import com.example.blogapp.utils.Category;
+import com.example.blogapp.enums.Category;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 @Service
-public class PostService {
+public class PostService implements PostInterface {
     private static final List<Post> posts = new ArrayList<>();
 
      static {
@@ -17,7 +18,7 @@ public class PostService {
          posts.add(new Post(4L, "Fourth Post", "This is my fourth post", "John Isaac",Category.TECHNOLOGY));
      }
 
-        public List<Post> getPosts() throws InterruptedException {
+        public List<Post> getPosts() {
             return posts;
         }
 

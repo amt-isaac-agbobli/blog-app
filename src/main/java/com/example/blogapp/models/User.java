@@ -1,6 +1,6 @@
 package com.example.blogapp.models;
 
-import com.example.blogapp.utils.RoleType;
+import com.example.blogapp.enums.RoleType;
 
 import java.util.UUID;
 
