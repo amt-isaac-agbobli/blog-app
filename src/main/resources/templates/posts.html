@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>List of Post</title>
+    <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
 <h1>List of Post</h1>
@@ -11,11 +12,15 @@
         <th>Id</th>
         <th>Title</th>
         <th>Content</th>
+        <th>Author</th>
+        <th>Action</th>
     </tr>
     <tr th:each="post : ${posts}">
         <td th:text="${post.id}">Id</td>
         <td th:text="${post.title}">Title</td>
         <td th:text="${post.content}">Content</td>
+        <td th:text="${post.author}"></td>
+        <td><a th:href="@{/posts/{id}/edit(id=${post.id})}">Edit</a></td>
     </tr>
 
 </body>
