@@ -5,6 +5,18 @@
     <title>List of Post</title>
 </head>
 <body>
+<h1>List of Post</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Content</th>
+    </tr>
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.id}">Id</td>
+        <td th:text="${post.title}">Title</td>
+        <td th:text="${post.content}">Content</td>
+    </tr>
 
 </body>
 </html>
