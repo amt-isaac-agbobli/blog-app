@@ -5,7 +5,7 @@ import com.example.blogapp.utils.Category;
 import java.util.UUID;
 
 public class Post {
-    private UUID id;
+    private Long id;
     private String title;
     private String content;
     private String author;
@@ -14,11 +14,11 @@ public class Post {
     public Post() {
     }
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -54,7 +54,7 @@ public class Post {
         this.category = category;
     }
 
-    public Post(UUID id , String title, String content, String author, Category category) {
+    public Post(Long id , String title, String content, String author, Category category) {
         this.id = id;
         this.title = title;
         this.content = content;
