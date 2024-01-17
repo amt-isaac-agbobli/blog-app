@@ -1,5 +1,7 @@
 package com.example.blogapp.models;
 
+import com.example.blogapp.utils.RoleType;
+
 import java.util.UUID;
 
 public class User {
@@ -8,12 +10,12 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private String role;
+    private RoleType role;
 
     public User() {
     }
 
-    public User(UUID id, String firstName, String lastName, String email, String password, String role) {
+    public User(UUID id, String firstName, String lastName, String email, String password, RoleType role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
