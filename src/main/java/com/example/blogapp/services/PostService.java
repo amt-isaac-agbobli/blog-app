@@ -22,4 +22,11 @@ public class PostService implements PostServiceInterface {
             return posts;
         }
 
+        public Post getPostById(Long id) {
+            return posts.stream()
+                    .filter(post -> post.getId() == id)
+                    .findFirst()
+                    .orElse(null);
+        }
+
 }
