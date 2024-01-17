@@ -1,5 +1,6 @@
 package com.example.blogapp.controllers;
 
+import com.example.blogapp.interfaces.PostControllerInterface;
 import com.example.blogapp.models.Post;
 import com.example.blogapp.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/posts")
-public class PostController {
+public class PostController implements PostControllerInterface {
     private  final PostService postService;
     @Autowired
     public PostController(PostService postService) {

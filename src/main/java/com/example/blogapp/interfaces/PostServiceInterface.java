@@ -4,6 +4,6 @@ import com.example.blogapp.models.Post;
 
 import java.util.List;
 
-public interface PostInterface {
+public interface PostServiceInterface {
     public List<Post> getPosts();
 }
