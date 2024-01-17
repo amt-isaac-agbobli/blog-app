@@ -30,4 +30,9 @@ public class PostController implements PostControllerInterface {
         model.addAttribute("post", postService.getPostById(id));
         return "post";
     }
+
+    @GetMapping(path = "/create")
+    public String getCreatePostPage(Model model) {
+        return "create-post";
+    }
 }
