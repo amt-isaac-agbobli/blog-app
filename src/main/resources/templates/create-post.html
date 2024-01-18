@@ -45,19 +45,23 @@
 <body>
 <h1>Create Post</h1>
 
-<form method="post" th:action="@{/posts/create}">
+<form th:method="post" th:action="@{/posts/create/new}" th:object="${post}">
     <div>
         <p>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title"/>
+            <input type="text" id="title" th:field="*{title}" />
         </p>
         <p>
             <label for="content">Content</label>
-            <textarea id="content" name="content"></textarea>
+            <textarea id="content" th:field="*{content}" ></textarea>
         </p>
         <p>
             <label for="author">Author</label>
-            <input type="text" id="author" name="author"/>
+            <input type="text" id="author" th:field="*{author}" />
+        </p>
+        <p>
+            <label for="category">Category</label>
+            <input type="text" id="category" th:field="*{category}" />
         </p>
         <p>
             <input type="submit" value="Create"/>
