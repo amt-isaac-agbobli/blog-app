@@ -6,11 +6,8 @@ import com.example.blogapp.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/posts")
@@ -33,6 +30,14 @@ public class PostController implements PostControllerInterface {
 
     @GetMapping(path = "/create")
     public String getCreatePostPage(Model model) {
+        model.addAttribute("post", new Post());
         return "create-post";
+    }
+
+    @PostMapping(path = "/create/new")
+    public String createPost(@ModelAttribute Post post) {
+        post.setId(postService.getPosts().size() + 1);
+        postService.createPost(post);
+        return "redirect:/posts";
     }
 }

@@ -29,4 +29,9 @@ public class PostService implements PostServiceInterface {
                     .orElse(null);
         }
 
+        public String createPost(Post post) {
+            posts.add(post);
+            return "redirect:/posts";
+        }
+
 }

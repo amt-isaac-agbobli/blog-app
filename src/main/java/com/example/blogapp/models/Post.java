@@ -59,5 +59,22 @@ public class Post {
         this.author = author;
         this.category = category;
     }
+    public Post(String title, String content, String author, Category category) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+        this.category = category;
+    }
+
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", category='" + category + '\'' +
+                '}';
+    }
+
 
 }
