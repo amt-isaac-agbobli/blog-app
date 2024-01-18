@@ -1,6 +1,7 @@
 package com.example.blogapp.interfaces;
 
 import com.example.blogapp.models.Post;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -8,5 +9,5 @@ public interface PostServiceInterface {
     public List<Post> getPosts();
 
     public Post getPostById(Long id);
-    public  String createPost(Post post);
+    public void createPost(@ModelAttribute() Post post);
 }
