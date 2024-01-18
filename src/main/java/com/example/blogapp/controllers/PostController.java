@@ -40,4 +40,9 @@ public class PostController implements PostControllerInterface {
         postService.createPost(post);
         return "redirect:/posts";
     }
+    @DeleteMapping(path = "delete/{id}")
+    public String deletePost(@PathVariable() Long id) {
+        postService.deletePost(id);
+        return "redirect:/posts";
+    }
 }
