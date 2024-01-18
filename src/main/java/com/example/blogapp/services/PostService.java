@@ -3,6 +3,8 @@ package com.example.blogapp.services;
 import com.example.blogapp.interfaces.PostServiceInterface;
 import com.example.blogapp.models.Post;
 import com.example.blogapp.enums.Category;
+import com.example.blogapp.repositories.PostRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,10 +19,16 @@ public class PostService implements PostServiceInterface {
          posts.add(new Post(3L, "Third Post", "This is my third post", "Ali Doe",Category.ECONOMY));
          posts.add(new Post(4L, "Fourth Post", "This is my fourth post", "John Isaac",Category.TECHNOLOGY));
      }
+     private final PostRepository postRepository;
+    @Autowired
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
-        public List<Post> getPosts() {
-            return posts;
+    public List<Post> getPosts() {
+            return postRepository.findAll();
         }
+
 
         public Post getPostById(Long id) {
             return posts.stream()

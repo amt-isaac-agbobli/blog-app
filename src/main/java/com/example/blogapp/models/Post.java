@@ -1,12 +1,18 @@
 package com.example.blogapp.models;
 
 import com.example.blogapp.enums.Category;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String content;
     private String author;
+
     private Category category;
 
     public Post() {
