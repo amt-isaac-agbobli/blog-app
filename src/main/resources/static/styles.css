@@ -1,4 +1,11 @@
-
+.deleBtn {
+    background-color: #f54242;
+    color: #ffffff;
+    border: 1px solid #f54242;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+}
 h1 {
     color: #000000;
     text-align: center;
@@ -46,4 +53,21 @@ input[type="submit"] {
     margin: 5px;
     border: 1px solid #e0a934;
     background-color: #7df543;
+}
+
+input[type="submit"]:hover {
+    background-color: #e0a934;
+    color: #7df543;
+}
+input[type="submit"]:active {
+    background-color: #e0a934;
+    color: #7df543;
+}
+.deleBtn {
+    background-color: #f54242;
+    color: #ffffff;
+    border: 1px solid #f54242;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
 }

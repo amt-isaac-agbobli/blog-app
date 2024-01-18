@@ -9,14 +9,14 @@
 <h1>List of Post</h1>
 <table>
     <tr>
-        <td colspan="5"><a href="/posts/create">Create Post</a></td>
+        <td colspan="7"><a href="/posts/create">Create Post</a></td>
     </tr>
     <tr>
         <th>Id</th>
         <th>Title</th>
         <th>Content</th>
         <th>Author</th>
-        <th>Action</th>
+        <th colspan="3">Action</th>
     </tr>
     <tr th:each="post : ${posts}">
         <td th:text="${post.id}">Id</td>
@@ -24,6 +24,13 @@
         <td th:text="${post.content}">Content</td>
         <td th:text="${post.author}"></td>
         <td><a th:href="@{/posts/{id}(id=${post.id})}">View</a></td>
+        <td><a th:href="@{/posts/edit/{id}(id=${post.id})}">Edit</a></td>
+        <td>
+            <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="delete">
+                <button type="submit" class="deleBtn">Delete</button>
+            </form>
+        </td>
+
     </tr>
     </table>
 
