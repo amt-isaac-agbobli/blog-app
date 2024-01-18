@@ -10,4 +10,5 @@ public interface PostServiceInterface {
 
     public Post getPostById(Long id);
     public void createPost(@ModelAttribute() Post post);
+    public  void deletePost(Long id);
 }

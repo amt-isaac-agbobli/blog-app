@@ -33,4 +33,8 @@ public class PostService implements PostServiceInterface {
             posts.add(post);
         }
 
+        public void deletePost(Long id) {
+            posts.removeIf(post -> post.getId() == id);
+        }
+
 }
