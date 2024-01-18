@@ -50,4 +50,9 @@ public class PostController implements PostControllerInterface {
         model.addAttribute("post", postService.getPostById(id));
         return "update-post";
     }
+    @PutMapping(path = "/update/{id}")
+    public String updatePost(@PathVariable() Long id, @ModelAttribute Post post) {
+        postService.updatePost(id, post);
+        return "redirect:/posts";
+    }
 }

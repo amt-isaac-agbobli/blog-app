@@ -45,7 +45,7 @@
 <body>
 <h1>Create Post</h1>
 
-<form th:method="post" th:action="@{/posts/create/new}" th:object="${post}">
+<form th:method="put" th:action="@{/posts/update/{id}(id=${post.id})}" th:object="${post}">
     <div>
         <p>
             <label for="title">Title</label>
