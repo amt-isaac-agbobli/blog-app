@@ -24,7 +24,7 @@
         <td th:text="${post.content}">Content</td>
         <td th:text="${post.author}"></td>
         <td><a th:href="@{/posts/{id}(id=${post.id})}">View</a></td>
-        <td><a th:href="@{/posts/edit/{id}(id=${post.id})}">Edit</a></td>
+        <td><a th:href="@{/posts/update/{id}(id=${post.id})}">Edit</a></td>
         <td>
             <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="delete">
                 <button type="submit" class="deleBtn">Delete</button>

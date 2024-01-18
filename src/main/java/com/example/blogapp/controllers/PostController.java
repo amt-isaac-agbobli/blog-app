@@ -45,4 +45,9 @@ public class PostController implements PostControllerInterface {
         postService.deletePost(id);
         return "redirect:/posts";
     }
+    @GetMapping(path = "/update/{id}")
+    public String getUpdatePostPage(@PathVariable() Long id, Model model) {
+        model.addAttribute("post", postService.getPostById(id));
+        return "update-post";
+    }
 }
