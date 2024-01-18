@@ -37,4 +37,12 @@ public class PostService implements PostServiceInterface {
             posts.removeIf(post -> post.getId() == id);
         }
 
+        public void updatePost(Long id, Post post) {
+            Post oldPost = getPostById(id);
+            oldPost.setTitle(post.getTitle());
+            oldPost.setAuthor(post.getAuthor());
+            oldPost.setContent(post.getContent());
+            oldPost.setCategory(post.getCategory());
+        }
+
 }
