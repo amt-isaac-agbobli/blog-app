@@ -1,19 +1,23 @@
 package com.example.blogapp.models;
 
-import com.example.blogapp.enums.Category;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "posts")
 public class Post {
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "post_sequence",
+            sequenceName = "post_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_sequence")
     private Long id;
     private String title;
     private String content;
     private String author;
 
-    private Category category;
+    private String category;
 
     public Post() {
     }
@@ -26,53 +30,53 @@ public class Post {
         this.id = id;
     }
 
-    public String getTitle() {
+    public java.lang.String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(java.lang.String title) {
         this.title = title;
     }
 
-    public String getContent() {
+    public java.lang.String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(java.lang.String content) {
         this.content = content;
     }
 
-    public String getAuthor() {
+    public java.lang.String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(java.lang.String author) {
         this.author = author;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategory(String string) {
+        this.category = string;
     }
 
-    public Post(Long id , String title, String content, String author, Category category) {
+    public Post(Long id , java.lang.String title, java.lang.String content, java.lang.String author, String string) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
-        this.category = category;
+        this.category = string;
     }
-    public Post(String title, String content, String author, Category category) {
+    public Post(java.lang.String title, java.lang.String content, java.lang.String author, String string) {
         this.title = title;
         this.content = content;
         this.author = author;
-        this.category = category;
+        this.category = string;
     }
 
-    public String toString() {
+    public java.lang.String toString() {
         return "Post{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
