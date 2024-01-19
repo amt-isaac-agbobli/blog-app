@@ -13,9 +13,9 @@ public class Post {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_sequence")
     private Long id;
-    private java.lang.String title;
-    private java.lang.String content;
-    private java.lang.String author;
+    private String title;
+    private String content;
+    private String author;
 
     private String category;
 

@@ -6,19 +6,10 @@ import com.example.blogapp.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 @Service
 public class PostService implements PostServiceInterface {
-    private static final List<Post> posts = new ArrayList<>();
-
-     static {
-         posts.add(new Post(1L, "First Post", "This is my first post", "John Doe", "SPORT"));
-         posts.add(new Post(2L, "Second Post", "This is my second post", "Christ John", "POLITICS"));
-         posts.add(new Post(3L, "Third Post", "This is my third post", "Ali Doe", "ECONOMY"));
-         posts.add(new Post(4L, "Fourth Post", "This is my fourth post", "John Isaac", "TECHNOLOGY"));
-     }
-     private final PostRepository postRepository;
+    private final PostRepository postRepository;
     @Autowired
     public PostService(PostRepository postRepository) {
         this.postRepository = postRepository;
@@ -27,8 +18,6 @@ public class PostService implements PostServiceInterface {
     public List<Post> getPosts() {
             return postRepository.findAll();
         }
-
-
         public Post getPostById(Long id) {
             return postRepository.findById(id).orElse(null);
         }
